@@ -21,7 +21,7 @@ final class Alias
 {
     public function __construct(
         /** @readonly */
-        public string $value
+        public string $value,
     ) {
     }
 
