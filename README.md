@@ -9,7 +9,7 @@ an efficient runtime lookup. These can be added via [attributes](#attributes) or
 
 1. **Alias**: short name for a class (could be used as an alternative to storing a FQCN
    in the database).
-2. **Metadata**: key-value map of scalar values specific to a class (could be used
+2. **Metadata**: key-value map of scalar or array values specific to a class (could be used
    to mark a class as _trackable_ in an auditing system).
 
 This library provides a Composer plugin that hooks into Composer's dump-autoload

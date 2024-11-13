@@ -16,6 +16,8 @@ use Zenstruck\Metadata;
 
 #[Alias('class5')]
 #[Metadata('key1', 'class5-value1')]
+#[Metadata('key2', ['a','b'])]
+
 final class Class5
 {
 }

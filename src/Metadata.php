@@ -24,7 +24,7 @@ final class Metadata
         public string $key,
 
         /** @readonly */
-        public string|bool|int|float $value,
+        public string|bool|int|float|array $value,
     ) {
     }
 
@@ -46,7 +46,7 @@ final class Metadata
      *
      * @param object|class-string|string $objectOrClassOrAlias
      */
-    public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|null
+    public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|array|null
     {
         return self::for($objectOrClassOrAlias)[$key] ?? null;
     }
@@ -57,7 +57,7 @@ final class Metadata
      *
      * @param object|class-string|string $objectOrClassOrAlias
      */
-    public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|null
+    public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|array|null
     {
         $metadata = self::for($objectOrClassOrAlias);
 
