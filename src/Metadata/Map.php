@@ -27,7 +27,7 @@ final class Map
     /** @var array<string,class-string> */
     public array $aliasToClassMap = [];
 
-    /** @var array<string|class-string,array<string,scalar>> */
+    /** @var array<string|class-string,array<string,scalar|mixed[]>> */
     public array $metadataMap = [];
 
     /** @var array<string,class-string[]> */

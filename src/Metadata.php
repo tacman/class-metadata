@@ -23,7 +23,10 @@ final class Metadata
         /** @readonly */
         public string $key,
 
-        /** @readonly */
+        /**
+         * @readonly
+         * @param string|bool|int|float|mixed value
+         */
         public string|bool|int|float|array $value,
     ) {
     }
@@ -45,6 +48,7 @@ final class Metadata
      * or null if key does not exist.
      *
      * @param object|class-string|string $objectOrClassOrAlias
+     * @return string|bool|int|float|array<mixed> value
      */
     public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|array|null
     {
@@ -56,6 +60,7 @@ final class Metadata
      * class/object/alias or null if no keys exist.
      *
      * @param object|class-string|string $objectOrClassOrAlias
+     * @return  string|bool|int|float|array<mixed>|null value
      */
     public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|array|null
     {
