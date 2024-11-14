@@ -60,7 +60,7 @@ final class Metadata
      * class/object/alias or null if no keys exist.
      *
      * @param object|class-string|string $objectOrClassOrAlias
-     * @return  string|bool|int|float|array<mixed>|null value
+     * @return scalar|array<scalar>|null
      */
     public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|array|null
     {
