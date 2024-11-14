@@ -49,7 +49,7 @@ final class Metadata
      * Retrieve a specific metadata item by key for a class/object/alias
      * or null if key does not exist.
      *
-     * @param object|class-string|string $objectOrClassOrAlias
+     * @param  object|class-string|string $objectOrClassOrAlias
      * @return Value|null
      */
     public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|array|null
@@ -61,7 +61,7 @@ final class Metadata
      * Retrieve the first matching metadata item for a list of keys for a
      * class/object/alias or null if no keys exist.
      *
-     * @param object|class-string|string $objectOrClassOrAlias
+     * @param  object|class-string|string $objectOrClassOrAlias
      * @return Value|null
      */
     public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|array|null

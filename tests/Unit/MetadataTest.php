@@ -40,7 +40,7 @@ final class MetadataTest extends TestCase
         $this->assertSame(['key1' => 'class2-value1', 'key2' => 2], Metadata::for(new Class2()));
         $this->assertSame(['key1' => 'class2-value1', 'key2' => 2], Metadata::for('class2'));
         $this->assertSame(['key1' => 'class4-value1'], Metadata::for(Class4::class));
-        $this->assertSame(['key1' => 'class5-value1', 'key2' => ['a','b']], Metadata::for(Class5::class));
+        $this->assertSame(['key1' => 'class5-value1', 'key2' => ['a', 'b']], Metadata::for(Class5::class));
 
         $this->assertNull(Metadata::get(Class1::class, 'key1'));
         $this->assertNull(Metadata::get(new Class1(), 'key1'));
@@ -65,7 +65,7 @@ final class MetadataTest extends TestCase
         $this->assertNull(Metadata::first(new Class2(), 'invalid', 'foo'));
         $this->assertNull(Metadata::first('class2', 'invalid', 'foo'));
 
-        $this->assertSame(['a','b'], Metadata::get(new Class5(), 'key2'));
+        $this->assertSame(['a', 'b'], Metadata::get(new Class5(), 'key2'));
 
         $this->assertSame([], Metadata::classesWith('foo'));
         $this->assertSame([Class2::class, Class4::class, Class5::class], Metadata::classesWith('key1'));
@@ -88,7 +88,7 @@ final class MetadataTest extends TestCase
         $this->assertSame(['key1' => 'override-value', 'key2' => 2, 'key3' => 3], Metadata::for(new Class2()));
         $this->assertSame(['key1' => 'override-value', 'key2' => 2, 'key3' => 3], Metadata::for('class2'));
         $this->assertSame(['key1' => 'class4-value1'], Metadata::for(Class4::class));
-        $this->assertSame(['key1' => 'class5-value1', 'key2' => ['a','b']], Metadata::for(Class5::class));
+        $this->assertSame(['key1' => 'class5-value1', 'key2' => ['a', 'b']], Metadata::for(Class5::class));
 
         $this->assertSame([], Metadata::classesWith('foo'));
         $this->assertSame([Class2::class, Class4::class, Class5::class, Class1::class], Metadata::classesWith('key1'));
