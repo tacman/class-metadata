@@ -25,7 +25,7 @@ final class Metadata
 
         /**
          * @readonly
-         * @param string|bool|int|float|mixed value
+         * @param scalar|array<scalar> value
          */
         public string|bool|int|float|array $value,
     ) {
