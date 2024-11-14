@@ -48,7 +48,7 @@ final class Metadata
      * or null if key does not exist.
      *
      * @param object|class-string|string $objectOrClassOrAlias
-     * @return string|bool|int|float|array<mixed> value
+     * @return scalar|array<scalar>|null
      */
     public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|array|null
     {
