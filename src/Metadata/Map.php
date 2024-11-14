@@ -18,6 +18,8 @@ use Zenstruck\Metadata;
  * @author Kevin Bond <kevinbond@gmail.com>
  *
  * @internal
+ *
+ * @phpstan-import-type Value from Metadata
  */
 final class Map
 {
@@ -27,7 +29,7 @@ final class Map
     /** @var array<string,class-string> */
     public array $aliasToClassMap = [];
 
-    /** @var array<string|class-string,array<string,scalar>> */
+    /** @var array<string|class-string,array<string,Value>> */
     public array $metadataMap = [];
 
     /** @var array<string,class-string[]> */

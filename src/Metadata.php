@@ -15,6 +15,8 @@ use Zenstruck\Metadata\Map;
 
 /**
  * @author Kevin Bond <kevinbond@gmail.com>
+ *
+ * @phpstan-type Value scalar|array<scalar>
  */
 #[\Attribute(\Attribute::TARGET_CLASS | \Attribute::IS_REPEATABLE)]
 final class Metadata
@@ -23,8 +25,11 @@ final class Metadata
         /** @readonly */
         public string $key,
 
-        /** @readonly */
-        public string|bool|int|float $value,
+        /**
+         * @readonly
+         * @var Value
+         */
+        public string|bool|int|float|array $value,
     ) {
     }
 
@@ -33,7 +38,7 @@ final class Metadata
      *
      * @param object|class-string|string $objectOrClassOrAlias
      *
-     * @return array<string,scalar>
+     * @return array<string,Value>
      */
     public static function for(object|string $objectOrClassOrAlias): array
     {
@@ -45,8 +50,9 @@ final class Metadata
      * or null if key does not exist.
      *
      * @param object|class-string|string $objectOrClassOrAlias
+     * @return Value|null
      */
-    public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|null
+    public static function get(object|string $objectOrClassOrAlias, string $key): string|bool|int|float|array|null
     {
         return self::for($objectOrClassOrAlias)[$key] ?? null;
     }
@@ -56,8 +62,9 @@ final class Metadata
      * class/object/alias or null if no keys exist.
      *
      * @param object|class-string|string $objectOrClassOrAlias
+     * @return Value|null
      */
-    public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|null
+    public static function first(object|string $objectOrClassOrAlias, string ...$keys): string|bool|int|float|array|null
     {
         $metadata = self::for($objectOrClassOrAlias);
 
